@@ -60,7 +60,52 @@
                     {% endfor %}
                 </ol>
             </div>
+
+
+
+            <!-- ▼twitter風ここから -->
+            <div class="twitter__container">
+                <!-- タイトル -->
+                <div class="twitter__title">
+                    <span class="twitter-logo"></span>
+                </div>
+
+                <!-- ▼タイムラインエリア scrollを外すと高さ固定解除 -->
+                <div class="twitter__contents scroll">
+
+                    <!-- 記事エリア -->
+                    {% for i in tweet %}
+                    <div class="twitter__block">
+                        <figure>
+                            <img src="https://1.bp.blogspot.com/-nMTqgygyczs/VqtZItHn2_I/AAAAAAAA3ZY/5ZfrZPuZzbY/s450/bird_aoitori_bluebird.png" />
+                        </figure>
+                        <div class="twitter__block-text">
+                            <div class="name">匿名さん<span class="name_reply">@tokumei_san</span></div>
+<!--                            <div class="date">{{i.tweet_time}}</div>-->
+                            <div class="date">○○分前</div>
+                            <div class="text">
+                                {{i}}<br>
+                            </div>
+                            <div class="twitter__icon">
+                                <span class="twitter-bubble"></span>
+                                <span class="twitter-loop"></span>
+                                <span class="twitter-heart"></span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+                <!--　▲タイムラインエリア ここまで -->
+            </div>
+            <!--　▲twitter風ここまで -->
+
+            </body>
+
         </div>
+
+
     </div>
 </div>
 

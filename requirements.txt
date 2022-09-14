@@ -19,6 +19,7 @@ requests
 setuptools
 six
 sqlparse
+tweepy
 tzdata
 urllib3
 wheel

@@ -12,7 +12,7 @@ from django.urls import reverse
 from django.views.generic import TemplateView
 
 from .location_search import near_observatory
-from . import geo_apis, wbgt_util, db2geojson
+from . import geo_apis, wbgt_util, db2geojson, tweet
 
 from .forms import LoginForm, SignupForm
 from .models import location, point_name
@@ -89,6 +89,9 @@ class MapView(TemplateView):
             # 周辺地域の取得
             tikaku = geo_apis.find_near(ido=ido, keido=keido)
 
+            # ツイート
+            tweetes = tweet.tweets(ido, keido)
+
             return render(
                 request=request,
                 template_name="app/detail.html",
@@ -103,6 +106,7 @@ class MapView(TemplateView):
                     "tikaku": tikaku,
                     "max_time": max_time,
                     "chart": chart,
+                    "tweet": tweetes,
                 },
             )
 
